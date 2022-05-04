@@ -1,3 +1,8 @@
+/*
+Aim of this main.tf file is to contain resources, such as aws_vpc, that I am declaring for Terraform to configure.
+Will try keep the file as stateless as possible (no hard coded information, secrets, or addresses)
+*/
+
 terraform {
   required_providers {
     aws = {
@@ -7,9 +12,7 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "ap-southeast-2"
-}
+
 
 resource "aws_budgets_budget" "limit-5" {
   name              = "monthly-demo-budget"
